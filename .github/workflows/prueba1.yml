@@ -12,7 +12,7 @@ jobs:
 
     # Se asegura de que se ejecute en tu runner Windows con etiqueta 'prod'
 
-    runs-on: [self-hosted, docker]
+    runs-on: [self-hosted, linux]
  
     steps:
 
