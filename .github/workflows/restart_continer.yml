@@ -13,9 +13,7 @@ jobs:
    - name: Conexion_via_ssh
      uses: appleboy/ssh-action@v1.0.0
      with:
-     host: 10.34.7.172
-     username: root
-     password: Fu114cce$$#.
+     
      port: 22
      script: |
                          cd /root
