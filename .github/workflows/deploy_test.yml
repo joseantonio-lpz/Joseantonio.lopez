@@ -1,5 +1,4 @@
-name: "Desplegar en servidor remoto" self-hosted runner
-
+name: despliegue_remoto self-hosted runner
 on:
   push:
     branches:
@@ -28,4 +27,4 @@ jobs:
             cd /home/GIT # Navega al directorio de tu aplicación
             echo "Hola  ...     prueba "
             # Puedes agregar aquí otros comandos, como npm install, composer install, etc.
-            # npm run build
+            npm run docker ps -a
