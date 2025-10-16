@@ -28,4 +28,4 @@ jobs:
             ls -lrt
             echo "Hola  ...     prueba "
             # Puedes agregar aquí otros comandos, como npm install, composer install, etc.
-            npm run docker ps -a
+              docker ps -a
