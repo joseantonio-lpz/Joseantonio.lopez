@@ -23,4 +23,6 @@ jobs:
       - name: Say Hello
 
         run: echo "Hola desde el servidor Windows"
- 
+        run: echo $HOSTNAME
+        run: ssh root@10.34.7.172
+        
