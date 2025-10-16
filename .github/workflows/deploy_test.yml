@@ -29,3 +29,6 @@ jobs:
             echo "Hola  ...     prueba "
             # Puedes agregar aquí otros comandos, como npm install, composer install, etc.
               docker ps -a
+              sleep 20
+              docker images
+              sleep 20
