@@ -25,7 +25,7 @@ jobs:
           key: ${{secrets.SSH_PRIVATE_KEY_172}} # Clave privada
           script: |
             cd /home/GIT     # Navega al directorio de tu aplicación
-            ll -lrt
+            ls -lrt
             echo "Hola  ...     prueba "
             # Puedes agregar aquí otros comandos, como npm install, composer install, etc.
             npm run docker ps -a
