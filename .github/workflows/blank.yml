@@ -23,26 +23,8 @@ jobs:
           host: ${{secrets.SSH_HOST_172}} # Tu nombre de host
           username: ${{secrets.SSH_USERNAME_172}} # Tu nombre de usuario
           key: ${{secrets.SSH_PRIVATE_KEY_172}} # Clave privada
-          script: |
-                  - name: Build Docker image
-                    run: |
-                    cd nginx-hello-worldb
-                    docker build -t nginx-hello-world .
-                    # Detener y eliminar contenedor anterior (si existe)
-                  
-                  - name: Stop previous container if exists
-                    run: |
-                    if (docker ps -a -q -f name=nginx-hello-world) 
-                     {
-                     docker stop nginx-hello-world-deployment
-                     docker nginx-hello-world-deployment
-                     } else {
-                     Write-Host "No container to stop/remove"
-                     }
-				  	 # Ejecutar contenedor con volumen y puerto
-				  - name: Run Docker container
-					 run: |
-				     docker run -d -p 8086:8085 `-v dataprotection-keys:/root/.aspnet/DataProtection-Keys `
-                    --name nginx-hello-world-deployment nginx-hello-world
+		  cd nginx-hello-world
+		  docker build -t nginx-hello-world .
+              docker run -d -p 8086:8085 `-v dataprotection-keys:/root/.aspnet/DataProtection-Keys` --name nginx-hello-world-deployment nginx-hello-world
 
 					
