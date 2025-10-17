@@ -27,6 +27,7 @@ jobs:
             pwd
             ls -lrt
             echo "path servidor 172"
+            git clone -b main https://github.com/joseantonio-lpz/Joseantonio.lopez.git
             cd /home/GIT/Joseantonio.lopez/nginx-hello-world-deployment
             docker build -t nginx-hello-world .
             docker run -d `-v dataprotection-keys:/root/.aspnet/DataProtection-Keys` --name nginx-hello-world -p 8086:8085 nginx-hello-world
