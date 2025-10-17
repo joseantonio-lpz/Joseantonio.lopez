@@ -25,6 +25,8 @@ jobs:
           key: ${{secrets.SSH_PRIVATE_KEY_172}} # Clave privada
           script: |
             pwd
-            cd /home/git/nginx-hello-world
+            ls -lrt
+            echo "path servidor 172"
+            cd nginx-hello-world
             docker build -t nginx-hello-world .
             docker run -d -p 8086:8085 `-v dataprotection-keys:/root/.aspnet/DataProtection-Keys` --name nginx-hello-world-deployment nginx-hello-world
