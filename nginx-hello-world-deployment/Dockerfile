@@ -15,3 +15,4 @@ EXPOSE 80
 
 # Comando que se ejecutará al iniciar el contenedor
 CMD ["echo", "¡Hola from Ubuntu!"]
+CMD ["tail", "-f", "/dev/null"]
