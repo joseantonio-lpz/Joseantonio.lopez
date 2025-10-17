@@ -34,5 +34,5 @@ jobs:
             ls -lrt
             docker build -t nginx-hello-world .
             docker run -d `-v dataprotection-keys:/root/.aspnet/DataProtection-Keys` --name nginx-hello-world -p 8086:8085 nginx-hello-world
-            sleep 3m
+            sleep 20
             
