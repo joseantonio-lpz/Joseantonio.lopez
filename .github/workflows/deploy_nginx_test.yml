@@ -15,7 +15,7 @@ jobs:
       - name: Añadir clave SSH al agente
         uses: webfactory/ssh-agent@v0.4.1
         with:
-        ssh-private-key: ${{secrets.SSH_PRIVATE_KEY_172}} # Usa el nombre del secreto que creaste
+         ssh-private-key: ${{secrets.SSH_PRIVATE_KEY_172}} # Usa el nombre del secreto que creaste
 
       - name: Conectar y ejecutar comandos en el servidor
         uses: appleboy/ssh-action@master
@@ -23,8 +23,8 @@ jobs:
           host: ${{secrets.SSH_HOST_172}} # Tu nombre de host
           username: ${{secrets.SSH_USERNAME_172}} # Tu nombre de usuario
           key: ${{secrets.SSH_PRIVATE_KEY_172}} # Clave privada
-		  cd nginx-hello-world
-		  docker build -t nginx-hello-world .
-      docker run -d -p 8086:8085 `-v dataprotection-keys:/root/.aspnet/DataProtection-Keys` --name nginx-hello-world-deployment nginx-hello-world
-
-					
+          script: |
+            pwd
+            cd /home/git/nginx-hello-world
+            docker build -t nginx-hello-world .
+            docker run -d -p 8086:8085 `-v dataprotection-keys:/root/.aspnet/DataProtection-Keys` --name nginx-hello-world-deployment nginx-hello-world
