@@ -1,3 +1,186 @@
+
+
+1 crear un reporsitorio, o usar uno que ya exista
+
+2.- crear un workflow  y clonar en VSCODE
+
+============================================================================================================
+============================================================================================================
+
+
+configurar ssh des github maquina   --- https://youtu.be/Y9jXwyDbTmQ?si=G7M0htWb9WB-CFBh
+
+1. instalar git
+2. abrir git_bash
+3. cd ~/.ssh
+ejecutar
+ssh-keygen -t ed25519 -C "joseantonio.lopez@seccionamarilla.com Github" -f id_ed25519  
+
+///Adsa#2025$$.!!!
+
+============================================================================================================
+============================================================================================================
+ejecutar Powwer shell con administrador y agregar la llave al servicio ssh
+
+PS C:\Users\joseantonio.lopez\documents> cd C:\Users\joseantonio.lopez\Documents\Github_ADSA
+
+
+    Directorio: C:\Users\joseantonio.lopez\Documents\Github_ADSA
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----     15/10/2025  12:47 p. m.                Github_Actions
+d-----     10/10/2025  12:41 p. m.                sa-design-mockups-ui
+d-----     13/10/2025  11:20 a. m.                sa-wfm-datahub-api
+d-----     09/10/2025  10:37 a. m.                sa-wfm-event-consumer-svc
+
+
+PS C:\Users\joseantonio.lopez\Documents\Github_ADSA> mkdir joseal
+
+
+    Directorio: C:\Users\joseantonio.lopez\Documents\Github_ADSA
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----     15/10/2025  03:29 p. m.                joseal
+
+
+PS C:\Users\joseantonio.lopez\Documents\Github_ADSA> cd joseal
+PS C:\Users\joseantonio.lopez\Documents\Github_ADSA\joseal> ssh-agent status
+unable to start ssh-agent service, error :1058
+
+PS C:\Users\joseantonio.lopez\Documents\Github_ADSA\joseal> Get-Service -Name ssh-agent | Set-Service -StartupType Manual
+PS C:\Users\joseantonio.lopez\Documents\Github_ADSA\joseal> ssh-agent start
+PS C:\Users\joseantonio.lopez\Documents\Github_ADSA\joseal> ssh-add.exe c:\Users\joseantonio.lopez\.ssh\id_ed25519
+Enter passphrase for c:\Users\joseantonio.lopez\.ssh\id_ed25519:
+Identity added: c:\Users\joseantonio.lopez\.ssh\id_ed25519 (joseantonio.lopez@seccionamarilla.com Github)
+PS C:\Users\joseantonio.lopez\Documents\Github_ADSA\joseal>
+
+joseantonio.lopez@PCAPPJOSE MINGW64 ~/.ssh (main)
+$ ll
+total 15
+-rw-r--r-- 1 joseantonio.lopez 1049089  275 Oct 15 15:56 config
+-rw-r--r-- 1 joseantonio.lopez 1049089 1323 Sep 11 12:07 container.pem
+-rw-r--r-- 1 joseantonio.lopez 1049089  484 Oct 15 15:22 id_ed25519
+-rw-r--r-- 1 joseantonio.lopez 1049089  126 Oct 15 15:22 id_ed25519.pub
+-rw-r--r-- 1 joseantonio.lopez 1049089 2172 Oct 15 15:57 known_hosts
+-rw-r--r-- 1 joseantonio.lopez 1049089 1434 Oct 15 15:57 known_hosts.old
+
+
+Configurar ssh en Github
+
+Ir a Github -- profile -- settings -- SSH and GPG keys
+
+Agregar la llave que contien el archivo .pub para este caso se llama ADSA_Acceso
+============================================================================================================
+============================================================================================================
+Clonar el repositorio de github Joseantonio.lopez en VSCODE
+
+ssh-add.exe c:\Usuarios\joseantonio.lopez\.ssh\id_ed25519
+
+Clonar el repositorio de github - 
+
+Desde VSCODE cambiarse al directorio
+
+C:\Users\joseantonio.lopez\documents\Github_ADSA\Github_Actions
+
+Clonar el directorio --  pide la contrasela de la llave
+
+PS C:\Users\joseantonio.lopez\documents\Github_ADSA\Github_Actions> git clone git@github.com:joseantonio-lpz/Joseantonio.lopez.git
+Cloning into 'Joseantonio.lopez'...
+Enter passphrase for key '/c/Users/joseantonio.lopez/.ssh/id_ed25519': 
+remote: Enumerating objects: 30, done.
+remote: Counting objects: 100% (30/30), done.
+remote: Compressing objects: 100% (17/17), done.
+remote: Total 30 (delta 4), reused 0 (delta 0), pack-reused 0 (from 0)
+Receiving objects: 100% (30/30), 7.53 KiB | 963.00 KiB/s, done.
+Resolving deltas: 100% (4/4), done.
+PS C:\Users\joseantonio.lopez\documents\Github_ADSA\Github_Actions> 
+
+============================================================================================================
+============================================================================================================
+cambiar a la ruta del repositorio clonado ----  Github_Actions> 
+
+PS C:\Users\joseantonio.lopez\Documents\Github_ADSA> cd .\Github_Actions\
+Abrir el VSCODE y generar un archivo de prueba
+
+PS C:\Users\joseantonio.lopez\Documents\Github_ADSA\Github_Actions> code .
+
+El archivo se nombro readme.md  con el siguiente contenido
+
+#Devops Tools
+
+Repositorio de Devops ADSA
+
+Desde VSCODE, revisar el estaus del repositorio
+
+PS C:\Users\joseantonio.lopez\Documents\Github_ADSA\Github_Actions> cd Joseantonio.lopez
+
+PS C:\Users\joseantonio.lopez\Documents\Github_ADSA\Github_Actions\Joseantonio.lopez> git status              ----- nos dice si hay archvivos nuevos sin subir a github
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)						--- Archivo que no se ha subido a github
+        .github/workflows/readme.md
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS C:\Users\joseantonio.lopez\Documents\Github_ADSA\Github_Actions\Joseantonio.lopez
+
+
+PS C:\Users\joseantonio.lopez\Documents\Github_ADSA\Github_Actions\Joseantonio.lopez> git add .			--- agrega el archivo a github
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   .github/workflows/readme.md
+
+PS C:\Users\joseantonio.lopez\Documents\Github_ADSA\Github_Actions\Joseantonio.lopez> git commit -m "Arcivo inicial para github actions"      			---- Guarda el cambio
+[main 3f38ffe] Arcivo inicial para github actions
+ Committer: Lopez Santamaria <joseantonio.lopez@seccionamarilla.com>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 .github/workflows/readme.md
+PS C:\Users\joseantonio.lopez\Documents\Github_ADSA\Github_Actions\Joseantonio.lopez> git push				----   hace el push a github, ahra ya se ve el archivo en github ruta: .github/workflows (https://github.com/joseantonio-lpz/Joseantonio.lopez/tree/main/.github/workflows)
+Enter passphrase for key '/c/Users/joseantonio.lopez/.ssh/id_ed25519': 
+Enumerating objects: 8, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (5/5), 390 bytes | 390.00 KiB/s, done.
+Total 5 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To github.com:joseantonio-lpz/Joseantonio.lopez.git
+   08ead44..3f38ffe  main -> main
+PS C:\Users\joseantonio.lopez\Documents\Github_ADSA\Github_Actions\Joseantonio.lopez>
+
+
+
+=========================================================================================
+
+En VSCODE crear una carpeta en este caso C:\Users\joseantonio.lopez\Documents\Github_ADSA\Joseantonio.lopez\nginx-hello-world-deployment
+
+crear el archivo yml: inx-hello-world-deployment.yml
+
+
+sincrnozar con github
+
+========================================================================================
+
 name: despliegue_remoto self-hosted runner
 on:
   push:
@@ -25,14 +208,15 @@ jobs:
           key: ${{secrets.SSH_PRIVATE_KEY_172}} # Clave privada
           script: |
             pwd
+            cd /home/GIT
+            mv Joseantonio.lopez /home/GIT/Joseantonio.lopez_$(date +'%Y-%m-%d')
             ls -lrt
             echo "path servidor 172"
             git clone -b main https://github.com/joseantonio-lpz/Joseantonio.lopez.git
             sleep 40
             ls -lrt
-            cd /root/Joseantonio.lopez/nginx-hello-world-deployment
+            cd /home/GIT/Joseantonio.lopez/nginx-hello-world-deployment
             ls -lrt
             docker build -t nginx-hello-world .
             docker run -d `-v dataprotection-keys:/root/.aspnet/DataProtection-Keys` --name nginx-hello-world -p 8086:8085 nginx-hello-world
             sleep 20
-            
