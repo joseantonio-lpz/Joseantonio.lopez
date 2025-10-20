@@ -24,29 +24,31 @@ jobs:
           username: ${{secrets.SSH_USERNAME_172}} # Tu nombre de usuario
           key: ${{secrets.SSH_PRIVATE_KEY_172}} # Clave privada
           script: |
-            echo "path servidor 172"
+            echo "### path servidor 172 ###"
             pwd
             cd /home/GIT
             mv Joseantonio.lopez /home/GIT/Joseantonio.lopez_$(date +'%Y-%m-%d')
             ls -lrt
-            echo 'Clonar el repositorio'
+            echo '### Clonar el repositorio ###'
             git clone -b main https://github.com/joseantonio-lpz/Joseantonio.lopez.git
             sleep 40
             ls -lrt
-            ecjo 'Detener el contener, eliminimar el contenedor y la imagen'
+            echo '### Detener el contenedor, eliminimar el contenedor y la imagen ###'
             docker ps
             docker stop nginx-hello-world
             sleep 40
             docker rm nginx-hello-world
             docker images
+            sleep 40
             docker rmi nginx-hello-world
-            echo 'Ejecutar el build y el deploy'
+            docker images
+            echo '### Ejecutar el build y el deploy ###'
             cd /home/GIT/Joseantonio.lopez/nginx-hello-world-deployment
             ls -lrt
             docker build -t nginx-hello-world .
             sleep 40
             docker run -d `-v dataprotection-keys:/root/.aspnet/DataProtection-Keys` --name nginx-hello-world -p 8086:8085 nginx-hello-world
             sleep 20
-            echo lista de los docker que se estan ejecutando
+            echo '### contenedores corriendo ###'
             docker ps -a
             
