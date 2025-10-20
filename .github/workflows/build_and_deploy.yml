@@ -35,5 +35,13 @@ jobs:
             cd /home/GIT/Joseantonio.lopez/nginx-hello-world-deployment
             ls -lrt
             docker build -t nginx-hello-world .
+            docker ps
+            docker stop nginx-hello-world
+            sleep 40
+            docker rm nginx-hello-world
+            docker images
+            docker rmi nginx-hello-world
+            slepp 40
+            docker ps -a
             docker run -d `-v dataprotection-keys:/root/.aspnet/DataProtection-Keys` --name nginx-hello-world -p 8086:8085 nginx-hello-world
             sleep 20
