@@ -5,7 +5,7 @@ FROM nginx:latest
 WORKDIR /app
 
 # Copia el código de la aplicación local al directorio /app del contenedor
-COPY . .
+COPY index.html /usr/share/nginx/html/
 
 # Instala el paquete curl
 RUN apt-get update && apt-get install -y curl
