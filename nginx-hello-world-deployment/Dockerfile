@@ -1,5 +1,5 @@
 # Usa una imagen base de Ubuntu
-FROM ubuntu:latest
+FROM nginx:latest
 
 # Establece el directorio de trabajo dentro del contenedor
 WORKDIR /app
@@ -14,5 +14,5 @@ RUN apt-get update && apt-get install -y curl
 EXPOSE 80
 
 # Comando que se ejecutará al iniciar el contenedor
-CMD ["echo", "¡Hola from Ubuntu!"]
+CMD ["echo", "¡Hola from nginx !"]
 CMD ["tail", "-f", "/dev/null"]
