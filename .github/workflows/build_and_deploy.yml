@@ -47,7 +47,7 @@ jobs:
             ls -lrt
             docker build -t nginx-hello-world .
             sleep 40
-            docker run -d `-v dataprotection-keys:/root/.aspnet/DataProtection-Keys` --name nginx-hello-world -p 8086:8085 nginx-hello-world
+            docker run -d `-v dataprotection-keys:/root/.aspnet/DataProtection-Keys` --name nginx-hello-world -p 8086:80 nginx-hello-world
             sleep 20
             echo '### contenedores corriendo ###'
             docker ps -a
