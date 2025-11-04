@@ -29,5 +29,5 @@ jobs:
             mv SI-B-WORK%20FLOW%20MANAGER%20BACK-2025 /home/GIT/SI-B-WORK%20FLOW%20MANAGER%20BACK-2025_$(date +'%Y%m%d-%H%M')
             ls -lrt
             echo '### Clonar el repositorio work-flow-manager ###'
-            git clone https://${{secrets.GIT_USER_ADSA}}:{{secrets.GIT_PASS_ADSA}}@intradsa.seccionamarilla.com:8181/tfs/SISTEMAS_INTERNET/_git/SI-B-PRODAPPS%20BACK%20-2025
+            git clone -b pet-docker  https://${{secrets.GIT_USER_ADSA}}:{{secrets.GIT_PASS_ADSA}}@intradsa.seccionamarilla.com:8181/tfs/SISTEMAS_INTERNET/_git/SI-B-WORK%20FLOW%20MANAGER%20BACK-2025
             
