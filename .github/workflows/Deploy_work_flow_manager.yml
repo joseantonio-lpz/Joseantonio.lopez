@@ -14,20 +14,17 @@ jobs:
       - name: Añadir clave SSH al agente
         uses: webfactory/ssh-agent@v0.4.1
         with:
-         ssh-private-key: ${{secrets.SSH_PRIVATE_KEY_172}} # Clave privada
+         ssh-private-key: ${{secrets.SSH_PRIVATE_KEY_170}} # Clave privada
 
       - name: Conectar y ejecutar comandos en el servidor
         uses: appleboy/ssh-action@master
         with:
           host: ${{secrets.SSH_HOST_172}} # Tu nombre de host
-          username: ${{secrets.SSH_USERNAME_172}} # nombre de usuario
-          key: ${{secrets.SSH_PRIVATE_KEY_172}} # Clave privada
+          username: ${{secrets.SSH_USERNAME_170}} # nombre de usuario
+          key: ${{secrets.SSH_PRIVATE_KEY_170}} # Clave privada
           script: |
-            echo "### path servidor 172 ###"
+            echo "### path servidor 170 ###"
             pwd
             cd /home/GIT
-            mv SI-B-WORK%20FLOW%20MANAGER%20BACK-2025 /home/GIT/SI-B-WORK%20FLOW%20MANAGER%20BACK-2025_$(date +'%Y%m%d-%H%M')
-            ls -lrt
-            echo '### Clonar el repositorio work-flow-manager ###'
-            git clone -b pet-docker  http://${{secrets.GIT_USER_ADSA}}:{{secrets.GIT_PASS_ADSA}}@intradsa.seccionamarilla.com:8181/tfs/SISTEMAS_INTERNET/_git/SI-B-WORK%20FLOW%20MANAGER%20BACK-2025
-            
+            ll -lrt 
+            echo "###Fin del script"
