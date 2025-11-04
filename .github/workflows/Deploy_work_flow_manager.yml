@@ -27,4 +27,4 @@ jobs:
             pwd
             cd /home/GIT
             ll -lrt 
-            echo "###Fin del script"
+            echo "###  Fin del script ###"
