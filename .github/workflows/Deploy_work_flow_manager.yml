@@ -26,5 +26,6 @@ jobs:
             echo "### path servidor 170 ###"
             pwd
             cd /home/GIT
-            ll -lrt 
+            pwd 
+            ls -lrt 
             echo "###  Fin del script ###"
