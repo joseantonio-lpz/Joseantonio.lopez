@@ -31,6 +31,6 @@ jobs:
             mv sa-wfm-event-ingestor-svc /home/GIT/sa-wfm-event-ingestor-svc_$(date +'%Y%m%d-%H%M')
             ls -lrt 
             echo '### Clonar el repositorio sa-wfm-event-ingestor-svc ###'
-            git clone -b main https://${{secrets.GH_ACCESS_KEY}}@github.com/hectorGutierrez90/sa-wfm-event-ingestor-svc.git
+            git clone -b main https://${{secrets.GH_ACCESS_KEY_HGH}}@github.com/hectorGutierrez90/sa-wfm-event-ingestor-svc.git
             echo '### Repositorio clonado ###' 
             ls -lrt
