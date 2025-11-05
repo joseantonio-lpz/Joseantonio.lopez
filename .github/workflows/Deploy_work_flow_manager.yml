@@ -24,8 +24,15 @@ jobs:
           key: ${{secrets.SSH_PRIVATE_KEY_170}} # Clave privada
           script: |
             echo "### path servidor 170 ###"
-            pwd
             cd /home/GIT
-            pwd 
+            pwd
             ls -lrt 
-            echo "###  Fin del script ###"
+            echo "###  respaldo del repositorio del servidor ###"
+            mv sa-wfm-event-consumer-svc /home/GIT/sa-wfm-event-consumer-svc_$(date +'%Y%m%d-%H%M')
+            ls -lrt 
+            echo '### Clonar el repositorio sa-wfm-event-consumer-svc ###'
+            git clone -b pet-2025 https://${{secrets.GH_ACCESS_KEY}}@github.com/jeacor/sa-wfm-event-consumer-svc.git
+            echo '### Repositorio clonado ###' 
+            ls -lrt
+
+            echo '### fin del workflow ###'
