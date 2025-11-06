@@ -31,11 +31,8 @@ jobs:
             mv SI-B-WORK%20FLOW%20MANAGER%20BACK-2025 /home/GIT/SI-B-WORK%20FLOW%20MANAGER%20BACK-2025_$(date +'%Y%m%d-%H%M')
             ls -lrt 
             echo '### Clonar el repositorio wfm-service  ###'
-            git clone -b pet-docker http://intradsa.seccionamarilla.com:8181/tfs/SISTEMAS_INTERNET/_git/SI-B-WORK%20FLOW%20MANAGER%20BACK-2025
+            git clone -b pet-docker http://${{secrets.USERNAME_JALS}}:${{secrets.PASSWORD_JALS}}@intradsa.seccionamarilla.com:8181/tfs/SISTEMAS_INTERNET/_git/SI-B-WORK%20FLOW%20MANAGER%20BACK-2025
             sleep 3
-            echo '${{secrets.USERNAME_JALS}}'
-            sleep 3
-            echo '${{secrets.PASSWORD_JALS}}'
             echo '### Repositorio clonado ###' 
             ls -lrt
             
