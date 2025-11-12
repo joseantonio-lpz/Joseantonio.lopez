@@ -34,3 +34,25 @@ jobs:
             git clone -b main https://${{secrets.GH_ACCESS_KEY_HGH}}@github.com/hectorGutierrez90/sa-wfm-event-ingestor-svc.git
             echo '### Repositorio clonado ###' 
             ls -lrt
+            sleep 40
+            echo '### Detener y eliminar el Contenedor wfm-producer ###'
+            docker ps
+            docker stop wfm-producer
+            sleep 40
+            docker rm wfm-producer
+            echo '### elimininar la imagen ###'
+            docker images
+            sleep 40
+            docker rmi wfm-producer
+            docker images
+            echo '### Ejecutar el build y el deploy ###'
+            cd /home/GIT/sa-wfm-event-ingestor-svc/WFM.DataHub
+            ls -lrt
+            docker build -t wfm-producer .
+            sleep 40
+            docker run -d -p 5000:8080 -v dataprotection-keys:/root/.aspnet/DataProtection-Keys --name wfm-producer-app wfm-producer
+            sleep 20
+            echo '### contenedores corriendo ###'
+            docker ps -a
+            echo '### fin del workflow ###'
+        
