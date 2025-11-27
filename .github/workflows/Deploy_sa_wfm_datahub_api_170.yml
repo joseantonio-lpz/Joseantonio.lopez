@@ -35,4 +35,23 @@ jobs:
             echo '### Repositorio clonado ###' 
             ls -lrt
             sleep 40
+            echo '### Detener y eliminar el Contenedor sa-wfm-datahub-api ###'
+            docker ps
+            docker stop sa-wfm-datahub-api
+            sleep 40
+            docker rm sa-wfm-datahub-api
+            echo '### eliminimar la imagen ###'
+            docker images
+            sleep 40
+            docker rmi sa-wfm-datahub-api
+            docker images
+            echo '### Ejecutar el build y el deploy ###'
+            cd /home/GIT/sa-wfm-datahub-api/SSAWFMDataHub
+            ls -lrt
+            docker build -t sa-wfm-datahub-api .
+            sleep 40
+            docker run -d -p 5001:8080 -v dataprotection-keys:/root/.aspnet/DataProtection-Keys --name sa-wfm-datahub-api sa-wfm-datahub-api
+            sleep 20
+            echo '### contenedores corriendo ###'
+            docker ps -a
             echo '### fin del workflow ###'
