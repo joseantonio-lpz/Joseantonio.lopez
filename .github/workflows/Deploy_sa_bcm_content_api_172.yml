@@ -31,7 +31,7 @@ jobs:
             mv sa-bcm-content-api /home/GIT/sa-bcm-content-api_$(date +'%Y%m%d-%H%M')
             ls -lrt 
             echo '### Clonar el repositorio sa-bcm-content-api ###'
-            git clone -b main https://github.com/jeacor/sa-bcm-content-api.git
+            git clone -b main https://${{secrets.GH_ACCESS_KEY}}@github.com/jeacor/sa-bcm-content-api.git
             echo '### Repositorio clonado ###' 
             ls -lrt
             sleep 20
