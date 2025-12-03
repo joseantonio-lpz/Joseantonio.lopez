@@ -1,4 +1,4 @@
-name: despliegue_remoto self-hosted runner --  sa-bcm-wfmforms-ui --
+name: Deploy remoto -  sa-bcm-wfmforms-ui 172--
 on:
   workflow_dispatch:
     branches:
