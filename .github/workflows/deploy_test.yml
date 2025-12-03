@@ -1,4 +1,4 @@
-name: Prueba de conexiona al servidor 172 
+name: Prueba de conexion al servidor 172 
 on:
   push:
     branches:
