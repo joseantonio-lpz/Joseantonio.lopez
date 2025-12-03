@@ -37,16 +37,16 @@ jobs:
             sleep 20
             echo '### Detener y eliminar el Contenedor sa-bcm-content-api ###'
             docker ps
-            docker stop bcm-container
+            docker stop bcm-api-container
             sleep 20
-            docker rm bcm-container
+            docker rm bcm-api-container
             echo '### eliminimar la imagen ###'
             docker images
             sleep 40
             docker rmi bcm-api-app
             docker images
             echo '### Ejecutar el build y el deploy ###'
-            cd cd  /home/GIT/sa-bcm-content-api
+            cd  /home/GIT/sa-bcm-content-api
             ls -lrt
             docker build -t bcm-api-app .
             sleep 20
