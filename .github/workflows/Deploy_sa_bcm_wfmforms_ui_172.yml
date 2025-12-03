@@ -46,7 +46,7 @@ jobs:
             docker rmi bcm-wfmforms-ui
             docker images
             echo '### Ejecutando el Build y Deploy ###'
-            cd cd  /home/GIT/sa-bcm-wfmforms-ui
+            cd  /home/GIT/sa-bcm-wfmforms-ui
             ls -lrt
             docker build -t bcm-wfmforms-ui .
             sleep 20
