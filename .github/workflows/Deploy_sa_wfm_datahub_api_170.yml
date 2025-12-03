@@ -1,6 +1,6 @@
 name: despliegue_remoto self-hosted runner
 on:
-  push:
+  workflow_dispatch:
     branches:
       - main # O la rama que desees
 jobs:
