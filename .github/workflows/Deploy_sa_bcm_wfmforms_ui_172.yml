@@ -31,7 +31,7 @@ jobs:
             mv sa-bcm-wfmforms-ui /home/GIT/sa-bcm-wfmforms-ui_$(date +'%Y%m%d-%H%M')
             ls -lrt 
             echo '### Clonar el repositorio sa-bcm-wfmforms-ui ###'
-            git clone -b main https://github.com/jeacor/sa-bcm-wfmforms-ui.git
+            git clone -b main https://${{secrets.GH_ACCESS_KEY}}@github.com/jeacor/sa-bcm-wfmforms-ui.git
             echo '### Repositorio clonado ###' 
             ls -lrt
             sleep 20
