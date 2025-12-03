@@ -1,4 +1,4 @@
-name: despliegue_remoto self-hosted runner
+name: Prueba de conexiona al servidor 172 
 on:
   push:
     branches:
