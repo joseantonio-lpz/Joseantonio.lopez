@@ -1,6 +1,7 @@
 name: Prueba de conexion al servidor 172 
 on:
-  push:
+  #### push: cambio de automatico a manual
+  workflow_dispatch:
     branches:
       - main # O la rama que desees
 
