@@ -1,4 +1,4 @@
-name: Deploy remoto -  sa-bcm-wfmforms-ui 172--
+name: Deploy Remoto -  sa-bcm-wfmforms-ui 172--
 on:
   workflow_dispatch:
     branches:
