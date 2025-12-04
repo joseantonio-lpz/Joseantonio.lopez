@@ -34,15 +34,15 @@ jobs:
             git clone -b pet-2025 https://${{secrets.GH_ACCESS_KEY}}@github.com/jeacor/sa-wfm-event-consumer-svc.git
             echo '### Repositorio clonado ###' 
             ls -lrt
-            sleep 40
+            sleep 20
             echo '### Detener y eliminar el Contenedor wfm-event-consumer ###'
             docker ps
             docker stop wfm-event-consumer
-            sleep 40
+            sleep 20
             docker rm wfm-event-consumer
             echo '### eliminimar la imagen ###'
             docker images
-            sleep 40
+            sleep 20
             docker rmi wfm-event-consumer
             docker images
             echo '### Ejecutar el build y el deploy ###'
